@@ -10,10 +10,22 @@ const options = [
 ];
 
 function App() {
-  const [value, setValue] = useState(options[0]);
+  const [value1, setValue1] = useState([options[0]]);
+  const [value2, setValue2] = useState(options[0]);
   return (
     <>
-      <Select options={options} value={value} onChange={(o) => setValue(o)} />
+      <Select
+        multiple
+        options={options}
+        value={value1}
+        onChange={(option) => setValue1(option)}
+      />
+      <br />
+      <Select
+        options={options}
+        value={value2}
+        onChange={(option) => setValue2(option)}
+      />
     </>
   );
 }
